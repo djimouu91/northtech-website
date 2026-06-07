@@ -23,7 +23,7 @@ const T = {
 
     services_tag:   'Expertise',
     services_title: 'Nos services spécialisés',
-    services_desc:  "Études complètes réalisées avec les logiciels de référence (ETAP, SKM Power Tools), conformes aux normes nord-américaines et internationales.",
+    services_desc:  "Études complètes réalisées avec les logiciels de référence (ETAP, SKM Power Tools, PSCAD, EasyPower), conformes aux normes nord-américaines et internationales.",
 
     s1_title: 'Étude de court-circuit',
     s1_desc:  "Calcul des courants de défaut maximaux et vérification du calibre des équipements (disjoncteurs, fusibles, switchgear).",
@@ -47,7 +47,7 @@ const T = {
     about2_title: 'Expertise terrain',
     about2_desc:  'Relevé terrain et études sous un même toit — aucune sous-traitance, données maîtrisées de bout en bout.',
     about3_title: 'Livraison rapide',
-    about3_desc:  "Workflows IA-augmentés avec ETAP : livraison 2× plus rapide que la moyenne du secteur, sans compromis sur la qualité.",
+    about3_desc:  "Workflows IA-augmentés avec ETAP, PSCAD et EasyPower : livraison 2× plus rapide que la moyenne du secteur, sans compromis sur la qualité.",
     about4_title: 'Trilingue FR · EN · AR',
     about4_desc:  "Unique au Québec : service complet en français, anglais et arabe — pour les marchés canadien, américain et algérien.",
 
@@ -108,7 +108,7 @@ const T = {
 
     services_tag:   'Expertise',
     services_title: 'Our Specialized Services',
-    services_desc:  'Comprehensive studies performed with industry-leading software (ETAP, SKM Power Tools), fully compliant with North American and international standards.',
+    services_desc:  'Comprehensive studies performed with industry-leading software (ETAP, SKM Power Tools, PSCAD, EasyPower), fully compliant with North American and international standards.',
 
     s1_title: 'Short Circuit Study',
     s1_desc:  'Calculate maximum fault currents and verify equipment ratings (breakers, fuses, switchgear) per IEEE 1584 and IEC 60909.',
@@ -132,7 +132,7 @@ const T = {
     about2_title: 'Field Expertise',
     about2_desc:  'Field surveys and engineering studies under one roof — no subcontracting, full data control end-to-end.',
     about3_title: 'Fast Delivery',
-    about3_desc:  'AI-augmented workflows with ETAP deliver results 2× faster than the industry average, without compromising quality.',
+    about3_desc:  'AI-augmented workflows with ETAP, PSCAD and EasyPower deliver results 2× faster than the industry average, without compromising quality.',
     about4_title: 'Trilingual FR · EN · AR',
     about4_desc:  'Unique in Quebec: full service in French, English, and Arabic — for Canadian, American, and Algerian markets.',
 
@@ -193,7 +193,7 @@ const T = {
 
     services_tag:   'خبرتنا',
     services_title: 'خدماتنا المتخصصة',
-    services_desc:  'دراسات شاملة باستخدام برامج متخصصة (ETAP, SKM) ومطابقة للمعايير الأمريكية الشمالية والدولية.',
+    services_desc:  'دراسات شاملة باستخدام برامج متخصصة (ETAP, SKM, PSCAD, EasyPower) ومطابقة للمعايير الأمريكية الشمالية والدولية.',
 
     s1_title: 'دراسة قصر الدارة',
     s1_desc:  'حساب تيارات العطل القصوى والتحقق من مواصفات الأجهزة (قواطع، مصهرات، لوحات توزيع) وفق IEEE 1584 و IEC 60909.',
@@ -217,7 +217,7 @@ const T = {
     about2_title: 'خبرة ميدانية',
     about2_desc:  'المسح الميداني والدراسات تحت سقف واحد — لا مقاولة من الباطن، بيانات محكومة من البداية للنهاية.',
     about3_title: 'تسليم سريع',
-    about3_desc:  'سير عمل مدعومة بالذكاء الاصطناعي مع ETAP: تسليم أسرع بمرتين من متوسط الصناعة دون المساس بالجودة.',
+    about3_desc:  'سير عمل مدعومة بالذكاء الاصطناعي مع ETAP و PSCAD و EasyPower: تسليم أسرع بمرتين من متوسط الصناعة دون المساس بالجودة.',
     about4_title: 'ثلاث لغات: FR · EN · AR',
     about4_desc:  'خدمة كاملة بالفرنسية والإنجليزية والعربية — للأسواق الكندية والأمريكية والجزائرية.',
 
