@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NorthTech Engineering — Études de réseaux électriques. Court-circuit, Arc Flash, Coordination. Canada, USA, Algérie.">
+  <meta property="og:title" content="NorthTech Engineering — Études électriques de précision">
+  <meta property="og:description" content="Études de réseaux électriques conformes CSA Z462, NFPA 70E, IEEE 1584. Canada · USA · Algérie.">
+  <meta property="og:type" content="website">
+  <title>NorthTech Engineering — Études électriques de précision</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+
+      <a href="#home" class="nav__logo">
+        <img src="images/logo.svg" alt="NorthTech" class="nav__logo-icon">
+        <span class="nav__logo-wordmark">
+          <span class="nav__logo-north">North</span><span class="nav__logo-tech">Tech</span>
+          <small class="nav__logo-sub">Engineering</small>
+        </span>
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#services" class="nav__link" data-i18n="nav_services">Services</a></li>
+        <li><a href="#about"    class="nav__link" data-i18n="nav_about">À propos</a></li>
+        <li><a href="#markets"  class="nav__link" data-i18n="nav_markets">Marchés</a></li>
+        <li><a href="#contact"  class="nav__link nav__link--cta" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__lang" role="group" aria-label="Langue / Language">
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__canvas" aria-hidden="true">
+      <svg class="hero__grid" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+        <!-- Horizontal lines -->
+        <line x1="0" y1="200" x2="1440" y2="200" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="0" y1="400" x2="1440" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="0" y1="600" x2="1440" y2="600" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <!-- Vertical lines -->
+        <line x1="360" y1="0" x2="360" y2="800" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <line x1="720" y1="0" x2="720" y2="800" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <line x1="1080" y1="0" x2="1080" y2="800" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <!-- Electrical waveform accent -->
+        <polyline
+          points="0,520 180,520 240,340 330,700 400,240 470,680 540,420 620,420 760,420 840,420 900,260 970,580 1040,180 1110,580 1180,420 1440,420"
+          fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="2"/>
+      </svg>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+    </div>
+
+    <div class="hero__content container">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span data-i18n="hero_badge">Ingénierie électrique certifiée</span>
+      </div>
+
+      <h1 class="hero__title" data-i18n="hero_title">L'ingénierie électrique<br>de précision.</h1>
+
+      <p class="hero__sub" data-i18n="hero_sub">
+        Études de réseaux électriques conformes aux normes CSA Z462, NFPA 70E et IEEE 1584.<br>Canada · USA · Algérie
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn--primary" data-i18n="hero_cta1">Demander une étude</a>
+        <a href="#services" class="btn btn--ghost" data-i18n="hero_cta2">Nos services</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num">3</span>
+          <span class="hero__stat-label" data-i18n="stat_countries">Pays desservis</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">3</span>
+          <span class="hero__stat-label" data-i18n="stat_langs">Langues</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">100%</span>
+          <span class="hero__stat-label" data-i18n="stat_conform">Conformité normative</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">2×</span>
+          <span class="hero__stat-label" data-i18n="stat_speed">Livraison accélérée</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#services" class="hero__scroll" aria-label="Défiler vers le bas">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="services_tag">Expertise</span>
+        <h2 class="section__title" data-i18n="services_title">Nos services spécialisés</h2>
+        <p class="section__desc" data-i18n="services_desc">Études complètes réalisées avec les logiciels de référence (ETAP, SKM Power Tools), conformes aux normes nord-américaines et internationales.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <!-- Card 1 — Court-circuit -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="16" stroke="#185FA5" stroke-width="1.8"/>
+              <polyline points="6,20 11,20 14,10 18,30 22,12 26,28 29,20 34,20"
+                stroke="#185FA5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s1_title">Étude de court-circuit</h3>
+          <p class="service-card__desc" data-i18n="s1_desc">Calcul des courants de défaut maximaux et vérification du calibre des équipements (disjoncteurs, fusibles, switchgear).</p>
+          <div class="service-card__norms">
+            <span>IEEE 1584-2018</span><span>CEI 60909</span><span>CSA C22.1</span>
+          </div>
+        </div>
+
+        <!-- Card 2 — Coordination -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <rect x="5" y="27" width="7" height="9" rx="1" stroke="#185FA5" stroke-width="1.8"/>
+              <rect x="16.5" y="19" width="7" height="17" rx="1" stroke="#185FA5" stroke-width="1.8"/>
+              <rect x="28" y="10" width="7" height="26" rx="1" stroke="#185FA5" stroke-width="1.8"/>
+              <path d="M8.5 27V18M20 19V8M31.5 10V4" stroke="#185FA5" stroke-width="1.5" stroke-dasharray="2.5 2"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s2_title">Coordination des protections</h3>
+          <p class="service-card__desc" data-i18n="s2_desc">Analyse de la sélectivité des protections pour assurer un délestage minimal lors d'un défaut électrique.</p>
+          <div class="service-card__norms">
+            <span>TCC Curves</span><span>ETAP / SKM</span><span>Sélectivité</span>
+          </div>
+        </div>
+
+        <!-- Card 3 — Arc Flash (featured) -->
+        <div class="service-card service-card--featured fade-in">
+          <span class="service-card__badge" data-i18n="badge_required">Obligation légale</span>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M20 3L5 24h10v13l15-20H20V3z"
+                stroke="rgba(255,255,255,0.9)" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s3_title">Étude arc flash</h3>
+          <p class="service-card__desc" data-i18n="s3_desc">Calcul de l'énergie incidente (cal/cm²), limites arc flash boundary, catégories EPI et étiquettes d'avertissement réglementaires.</p>
+          <div class="service-card__norms service-card__norms--light">
+            <span>CSA Z462</span><span>NFPA 70E</span><span>IEEE 1584-2018</span>
+          </div>
+        </div>
+
+        <!-- Card 4 — SLD -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="34" height="34" rx="4" stroke="#185FA5" stroke-width="1.8"/>
+              <circle cx="20" cy="20" r="5" stroke="#185FA5" stroke-width="1.8"/>
+              <line x1="3" y1="20" x2="15" y2="20" stroke="#185FA5" stroke-width="1.8"/>
+              <line x1="25" y1="20" x2="37" y2="20" stroke="#185FA5" stroke-width="1.8"/>
+              <line x1="20" y1="3" x2="20" y2="15" stroke="#185FA5" stroke-width="1.8"/>
+              <line x1="20" y1="25" x2="20" y2="37" stroke="#185FA5" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s4_title">Schémas unifilaires</h3>
+          <p class="service-card__desc" data-i18n="s4_desc">Relevé terrain et génération de SLD conformes ANSI/IEEE Std 315. Livrables en SVG, PDF et AutoCAD DWG.</p>
+          <div class="service-card__norms">
+            <span>ANSI/IEEE 315</span><span>DWG</span><span>SVG / PDF</span>
+          </div>
+        </div>
+
+        <!-- Card 5 — Load Flow -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M5 32 Q12 14 20 20 Q28 26 35 8" stroke="#185FA5" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              <circle cx="20" cy="20" r="3.5" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.8"/>
+              <circle cx="5" cy="32" r="2.5" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+              <circle cx="35" cy="8" r="2.5" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s5_title">Écoulement de puissance</h3>
+          <p class="service-card__desc" data-i18n="s5_desc">Analyse de la distribution de puissance active et réactive pour optimiser les profils de tension et le facteur de puissance.</p>
+          <div class="service-card__norms">
+            <span>Load Flow</span><span>Voltage Profile</span><span>Power Factor</span>
+          </div>
+        </div>
+
+        <!-- Card 6 — Harmonics -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M4 20 Q8 8 12 20 Q16 32 20 20 Q24 8 28 20 Q32 32 36 20"
+                stroke="#185FA5" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              <path d="M4 26 Q6 22 8 26 Q10 30 12 26 Q14 22 16 26 Q18 30 20 26 Q22 22 24 26 Q26 30 28 26 Q30 22 32 26 Q34 30 36 26"
+                stroke="#185FA5" stroke-width="1.3" stroke-dasharray="1.5 1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s6_title">Analyse harmonique</h3>
+          <p class="service-card__desc" data-i18n="s6_desc">Évaluation des distorsions harmoniques (THD) et recommandations de filtrage conformes à IEEE 519.</p>
+          <div class="service-card__norms">
+            <span>IEEE 519</span><span>THD Analysis</span><span>Filter Design</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY NORTHTECH ============ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="about_tag">Notre différence</span>
+        <h2 class="section__title" data-i18n="about_title">Pourquoi choisir NorthTech ?</h2>
+      </div>
+
+      <div class="about__grid">
+
+        <div class="about__card fade-in">
+          <div class="about__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M20 3L4 13v7c0 9.2 6.7 17.8 16 20 9.3-2.2 16-10.8 16-20v-7L20 3z"
+                stroke="#0C447C" stroke-width="1.8" fill="none"/>
+              <path d="M13 20l5 5 9-9" stroke="#0C447C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about1_title">Rigueur normative</h3>
+          <p data-i18n="about1_desc">Chaque étude respecte strictement les normes CSA, NFPA, IEEE et CEI en vigueur. Aucun compromis.</p>
+        </div>
+
+        <div class="about__card fade-in">
+          <div class="about__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <rect x="8" y="5" width="24" height="30" rx="3" stroke="#0C447C" stroke-width="1.8"/>
+              <line x1="13" y1="14" x2="27" y2="14" stroke="#0C447C" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="13" y1="20" x2="27" y2="20" stroke="#0C447C" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="13" y1="26" x2="22" y2="26" stroke="#0C447C" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="30" cy="30" r="7" fill="#E6F1FB" stroke="#0C447C" stroke-width="1.8"/>
+              <path d="M27 30l2 2 4-4" stroke="#0C447C" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about2_title">Expertise terrain</h3>
+          <p data-i18n="about2_desc">Relevé terrain et études sous un même toit — aucune sous-traitance, données maîtrisées de bout en bout.</p>
+        </div>
+
+        <div class="about__card fade-in">
+          <div class="about__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="16" stroke="#0C447C" stroke-width="1.8"/>
+              <path d="M20 10v10l7 7" stroke="#0C447C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 5.5l1.5 3M29 5.5l-1.5 3" stroke="#0C447C" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about3_title">Livraison rapide</h3>
+          <p data-i18n="about3_desc">Workflows IA-augmentés avec ETAP : livraison 2× plus rapide que la moyenne du secteur, sans compromis sur la qualité.</p>
+        </div>
+
+        <div class="about__card fade-in">
+          <div class="about__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <ellipse cx="20" cy="20" rx="17" ry="8.5" stroke="#0C447C" stroke-width="1.8"/>
+              <ellipse cx="20" cy="20" rx="10" ry="17" stroke="#0C447C" stroke-width="1.8"/>
+              <circle cx="20" cy="20" r="3" fill="#0C447C"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about4_title">Trilingue FR · EN · AR</h3>
+          <p data-i18n="about4_desc">Unique au Québec : service complet en français, anglais et arabe — pour les marchés canadien, américain et algérien.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARKETS ============ -->
+  <section class="section markets" id="markets">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="markets_tag">Couverture mondiale</span>
+        <h2 class="section__title" data-i18n="markets_title">Nos marchés</h2>
+        <p class="section__desc" data-i18n="markets_desc">NorthTech opère sur trois marchés distincts avec une expertise locale et une connaissance approfondie des normes applicables.</p>
+      </div>
+
+      <div class="markets__grid">
+
+        <div class="market-card fade-in">
+          <div class="market-card__flag">🇨🇦</div>
+          <h3 class="market-card__country" data-i18n="m1_country">Canada</h3>
+          <p class="market-card__region" data-i18n="m1_sub">Québec — prioritaire</p>
+          <div class="market-card__langs">
+            <span class="lang-tag">Français</span>
+            <span class="lang-tag">English</span>
+          </div>
+          <ul class="market-card__norms">
+            <li><strong>CSA Z462</strong> — Sécurité arc flash</li>
+            <li><strong>CSA C22.1</strong> — Code électrique</li>
+            <li><strong>CEQ C22.10-F18</strong> — Québec</li>
+          </ul>
+          <p class="market-card__clients" data-i18n="m1_clients">Industrie · Hydro-Québec · Construction</p>
+        </div>
+
+        <div class="market-card market-card--dark fade-in">
+          <div class="market-card__flag">🇺🇸</div>
+          <h3 class="market-card__country" data-i18n="m2_country">États-Unis</h3>
+          <p class="market-card__region" data-i18n="m2_sub">USA — National</p>
+          <div class="market-card__langs">
+            <span class="lang-tag">English</span>
+          </div>
+          <ul class="market-card__norms">
+            <li><strong>NFPA 70E</strong> — Electrical Safety</li>
+            <li><strong>IEEE 1584-2018</strong> — Arc Flash</li>
+            <li><strong>NFPA 70 / NEC</strong> — Electrical Code</li>
+          </ul>
+          <p class="market-card__clients" data-i18n="m2_clients">Industriel · Data Centers · Fortune 500</p>
+        </div>
+
+        <div class="market-card fade-in">
+          <div class="market-card__flag">🇩🇿</div>
+          <h3 class="market-card__country" data-i18n="m3_country">Algérie</h3>
+          <p class="market-card__region" data-i18n="m3_sub">Afrique du Nord</p>
+          <div class="market-card__langs">
+            <span class="lang-tag">Français</span>
+            <span class="lang-tag">عربي</span>
+          </div>
+          <ul class="market-card__norms">
+            <li><strong>CEI 60909</strong> — Court-circuit</li>
+            <li><strong>CEI 60364</strong> — Installations BT</li>
+            <li><strong>CEI 61936</strong> — Installations HT</li>
+          </ul>
+          <p class="market-card__clients" data-i18n="m3_clients">Sonatrach · Cimenteries · Mines</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPLIANCE BANNER ============ -->
+  <div class="compliance">
+    <div class="container compliance__inner">
+      <span class="compliance__label" data-i18n="comply_label">Normes maîtrisées</span>
+      <div class="compliance__list" aria-label="Standards">
+        <span>CSA Z462</span>
+        <span class="compliance__dot">·</span>
+        <span>NFPA 70E</span>
+        <span class="compliance__dot">·</span>
+        <span>IEEE 1584-2018</span>
+        <span class="compliance__dot">·</span>
+        <span>CEI 60909</span>
+        <span class="compliance__dot">·</span>
+        <span>CSA C22.1</span>
+        <span class="compliance__dot">·</span>
+        <span>IEEE 519</span>
+        <span class="compliance__dot">·</span>
+        <span>ANSI/IEEE 315</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+
+        <div class="contact__info fade-in">
+          <span class="section__tag" data-i18n="contact_tag">Contactez-nous</span>
+          <h2 class="section__title contact__title" data-i18n="contact_title">Démarrons votre étude</h2>
+          <p class="contact__lead" data-i18n="contact_desc">Remplissez le formulaire et un ingénieur vous contacte sous 24 heures ouvrables.</p>
+
+          <ul class="contact__details">
+            <li class="contact__detail">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8l8 5 8-5M4 8v12h16V8" stroke="#185FA5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:info@northtech.ca">info@northtech.ca</a>
+            </li>
+            <li class="contact__detail">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z" stroke="#185FA5" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="#185FA5" stroke-width="1.8"/></svg>
+              <span>Gatineau, Québec, Canada</span>
+            </li>
+            <li class="contact__detail">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#185FA5" stroke-width="1.8"/><circle cx="12" cy="17" r="1.2" fill="#185FA5"/></svg>
+              <span data-i18n="contact_remote">Service à distance disponible</span>
+            </li>
+          </ul>
+
+          <div class="contact__domains">
+            <a href="#" class="contact__domain">northtech.ca</a>
+            <a href="#" class="contact__domain">northtech.com</a>
+            <a href="#" class="contact__domain">northtech.dz</a>
+          </div>
+        </div>
+
+        <form class="contact__form fade-in" id="contact-form" novalidate>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="f-name" data-i18n="form_name">Nom complet *</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form__group">
+              <label for="f-company" data-i18n="form_company">Entreprise</label>
+              <input type="text" id="f-company" name="company" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="f-email" data-i18n="form_email">Courriel *</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form__group">
+              <label for="f-country" data-i18n="form_country">Pays *</label>
+              <select id="f-country" name="country" required>
+                <option value="" data-i18n="form_country_ph">-- Sélectionner --</option>
+                <option value="ca">Canada</option>
+                <option value="us">États-Unis / USA</option>
+                <option value="dz">Algérie / الجزائر</option>
+                <option value="other" data-i18n="form_country_other">Autre / Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="f-service" data-i18n="form_service">Service demandé *</label>
+            <select id="f-service" name="service" required>
+              <option value="" data-i18n="form_service_ph">-- Sélectionner un service --</option>
+              <option value="arc-flash"    data-i18n="s3_title">Étude arc flash</option>
+              <option value="short-circuit" data-i18n="s1_title">Étude de court-circuit</option>
+              <option value="coordination"  data-i18n="s2_title">Coordination des protections</option>
+              <option value="sld"           data-i18n="s4_title">Schémas unifilaires</option>
+              <option value="load-flow"     data-i18n="s5_title">Écoulement de puissance</option>
+              <option value="harmonics"     data-i18n="s6_title">Analyse harmonique</option>
+              <option value="package"       data-i18n="form_package">Forfait complet</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="f-message" data-i18n="form_message">Message / Description du projet</label>
+            <textarea id="f-message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block" data-i18n="form_submit">
+            Envoyer la demande
+          </button>
+          <p class="form__note" data-i18n="form_note">Réponse garantie sous 24h ouvrables</p>
+          <div class="form__success" id="form-success" hidden>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#185FA5" stroke-width="1.8"/><path d="M8 12l3 3 5-5" stroke="#185FA5" stroke-width="2" stroke-linecap="round"/></svg>
+            <span data-i18n="form_success">Demande envoyée ! Nous vous répondons sous 24h.</span>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <a href="#home" class="nav__logo footer__logo">
+            <img src="images/logo.svg" alt="NorthTech" class="nav__logo-icon">
+            <span class="nav__logo-wordmark">
+              <span class="nav__logo-north footer__logo-north">North</span><span class="nav__logo-tech footer__logo-tech">Tech</span>
+              <small class="nav__logo-sub footer__logo-sub">Engineering</small>
+            </span>
+          </a>
+          <p class="footer__tagline" data-i18n="hero_badge">Ingénierie électrique certifiée</p>
+          <p class="footer__slogan" data-i18n="footer_tagline">L'ingénierie électrique de précision.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Services">
+          <h4 data-i18n="footer_col_services">Services</h4>
+          <ul>
+            <li><a href="#services" data-i18n="s3_title">Arc Flash</a></li>
+            <li><a href="#services" data-i18n="s1_title">Court-circuit</a></li>
+            <li><a href="#services" data-i18n="s2_title">Coordination</a></li>
+            <li><a href="#services" data-i18n="s4_title">Schémas unifilaires</a></li>
+            <li><a href="#services" data-i18n="s5_title">Écoulement de puissance</a></li>
+            <li><a href="#services" data-i18n="s6_title">Analyse harmonique</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__nav" aria-label="Marchés">
+          <h4 data-i18n="footer_col_markets">Marchés</h4>
+          <ul>
+            <li><a href="#markets">Canada</a></li>
+            <li><a href="#markets" data-i18n="m2_country">États-Unis</a></li>
+            <li><a href="#markets" data-i18n="m3_country">Algérie</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact-block">
+          <h4 data-i18n="nav_contact">Contact</h4>
+          <p><a href="mailto:info@northtech.ca">info@northtech.ca</a></p>
+          <p>Gatineau, QC, Canada</p>
+          <div class="footer__domains-list">
+            <span>northtech.ca</span>
+            <span>northtech.com</span>
+            <span>northtech.dz</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p data-i18n="footer_copy">© 2025 NorthTech Engineering Inc. Tous droits réservés.</p>
+        <p class="footer__legal" data-i18n="footer_legal">NorthTech Ingénierie Inc. (Québec) · northtech.ca</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
