@@ -334,6 +334,15 @@ input, select, textarea { font-family: inherit; }
   background: radial-gradient(circle, rgba(12,68,124,.3) 0%, transparent 70%);
 }
 
+/* Animated current flowing along the hero waveform */
+.hero__waveform {
+  stroke-dasharray: 8 4;
+  animation: currentFlow 4s linear infinite;
+}
+@keyframes currentFlow {
+  to { stroke-dashoffset: -96; }
+}
+
 .hero__content {
   position: relative;
   z-index: 1;
@@ -516,6 +525,61 @@ input, select, textarea { font-family: inherit; }
 }
 .service-card__icon svg { width: 100%; height: 100%; }
 
+/* --- Equipment icon animations --- */
+.service-card__icon svg * { transform-box: fill-box; }
+
+/* Short-circuit: waveform draws and re-draws */
+.icon-anim-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: iconDraw 2.8s ease-in-out infinite;
+}
+@keyframes iconDraw {
+  0%   { stroke-dashoffset: 100; }
+  45%  { stroke-dashoffset: 0; }
+  80%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -100; }
+}
+
+/* Coordination / harmonics: dashed lines flow */
+.icon-anim-flow {
+  animation: iconFlow 1.4s linear infinite;
+}
+@keyframes iconFlow {
+  to { stroke-dashoffset: -9; }
+}
+
+/* Arc flash: bolt flickers like an arc */
+.icon-anim-flicker {
+  animation: iconFlicker 2.4s ease-in-out infinite;
+}
+@keyframes iconFlicker {
+  0%, 18%, 22%, 54%, 58%, 100% { filter: drop-shadow(0 0 0 transparent); opacity: 1; }
+  20% { filter: drop-shadow(0 0 8px rgba(255,255,255,.95)); opacity: .85; }
+  56% { filter: drop-shadow(0 0 6px rgba(255,255,255,.9)); opacity: .9; }
+}
+
+/* SLD: center node pulses */
+.icon-anim-pulse {
+  animation: iconPulse 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes iconPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .35; transform: scale(1.3); }
+}
+
+/* Load flow: power dot travels along the line */
+.icon-anim-travel {
+  offset-path: path("M5 32 Q12 14 20 20 Q28 26 35 8");
+  offset-rotate: 0deg;
+  animation: iconTravel 3s linear infinite;
+}
+@keyframes iconTravel {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
 .service-card__title {
   font-size: 17px;
   font-weight: 600;
@@ -603,6 +667,59 @@ input, select, textarea { font-family: inherit; }
   color: var(--gray);
   line-height: 1.65;
 }
+
+/* ============================================
+   GALLERY / FIELD EXPERTISE
+   ============================================ */
+.gallery { background: var(--gray-light); }
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-md);
+  min-height: 220px;
+}
+.gallery__item--tall { grid-row: span 2; min-height: 100%; }
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transform: scale(1.04);
+  transition: transform 1.2s cubic-bezier(.16,1,.3,1);
+}
+.gallery__item:hover img { transform: scale(1.14); }
+
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12,68,124,0) 45%, rgba(8,30,54,.85) 100%);
+  pointer-events: none;
+}
+
+.gallery__item figcaption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 1;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+.rtl .gallery__item figcaption { left: 18px; right: 18px; text-align: right; }
 
 /* ============================================
    MARKETS
@@ -1013,6 +1130,10 @@ input, select, textarea { font-family: inherit; }
   /* Services */
   .services__grid { grid-template-columns: 1fr; }
 
+  /* Gallery */
+  .gallery__grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .gallery__item--tall { grid-row: span 1; min-height: 220px; }
+
   /* Markets */
   .markets__grid { grid-template-columns: 1fr; }
 
@@ -1032,6 +1153,7 @@ input, select, textarea { font-family: inherit; }
 @media (max-width: 600px) {
   .services__grid  { grid-template-columns: 1fr; }
   .about__grid     { grid-template-columns: 1fr; }
+  .gallery__grid   { grid-template-columns: 1fr; }
   .hero__ctas      { flex-direction: column; }
   .hero__ctas .btn { width: 100%; justify-content: center; }
 }

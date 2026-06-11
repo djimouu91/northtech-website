@@ -51,6 +51,13 @@ const T = {
     about4_title: 'Trilingue FR · EN · AR',
     about4_desc:  "Unique au Québec : service complet en français, anglais et arabe — pour les marchés canadien, américain et algérien.",
 
+    gallery_tag:   'Sur le terrain',
+    gallery_title: 'Notre expertise en infrastructure électrique',
+    gallery_desc:  "De la sous-station à l'armoire de distribution, nous intervenons directement sur les équipements pour des relevés précis et des études fiables.",
+    gallery1_caption: 'Sous-stations haute tension',
+    gallery2_caption: 'Inspection et relevé terrain',
+    gallery3_caption: 'Isolateurs et équipements HT',
+
     markets_tag:   'Couverture mondiale',
     markets_title: 'Nos marchés',
     markets_desc:  "NorthTech opère sur trois marchés distincts avec une expertise locale et une connaissance approfondie des normes applicables.",
@@ -136,6 +143,13 @@ const T = {
     about4_title: 'Trilingual FR · EN · AR',
     about4_desc:  'Unique in Quebec: full service in French, English, and Arabic — for Canadian, American, and Algerian markets.',
 
+    gallery_tag:   'In the Field',
+    gallery_title: 'Hands-On Electrical Infrastructure Expertise',
+    gallery_desc:  'From substations to switchgear rooms, we work directly with equipment to ensure accurate field data and reliable studies.',
+    gallery1_caption: 'High-Voltage Substations',
+    gallery2_caption: 'Field Inspection & Survey',
+    gallery3_caption: 'HV Insulators & Equipment',
+
     markets_tag:   'Global Coverage',
     markets_title: 'Our Markets',
     markets_desc:  'NorthTech operates across three distinct markets with local expertise and in-depth knowledge of applicable standards.',
@@ -220,6 +234,13 @@ const T = {
     about3_desc:  'سير عمل مدعومة بالذكاء الاصطناعي مع ETAP و PSCAD و EasyPower: تسليم أسرع بمرتين من متوسط الصناعة دون المساس بالجودة.',
     about4_title: 'ثلاث لغات: FR · EN · AR',
     about4_desc:  'خدمة كاملة بالفرنسية والإنجليزية والعربية — للأسواق الكندية والأمريكية والجزائرية.',
+
+    gallery_tag:   'في الميدان',
+    gallery_title: 'خبرة ميدانية في البنية التحتية الكهربائية',
+    gallery_desc:  'من محطات التحويل إلى لوحات التوزيع، نعمل مباشرة على المعدات لضمان بيانات ميدانية دقيقة ودراسات موثوقة.',
+    gallery1_caption: 'محطات التحويل عالية الجهد',
+    gallery2_caption: 'الفحص والمسح الميداني',
+    gallery3_caption: 'عوازل ومعدات الجهد العالي',
 
     markets_tag:   'تغطية عالمية',
     markets_title: 'أسواقنا',
