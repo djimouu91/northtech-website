@@ -14,7 +14,7 @@ const T = {
     hero_badge:  'Ingénierie électrique certifiée',
     hero_title:  "L'ingénierie électrique<br><span class=\"shiny\">de précision.</span>",
     hero_sub:    "Études de réseaux électriques conformes aux normes CSA Z462, NFPA 70E et IEEE 1584.<br>Canada · USA · Algérie",
-    hero_cta1:   'Demander une étude',
+    hero_cta1:   'Parlons de votre projet',
     hero_cta2:   'Nos services',
 
     stat_countries: 'Pays desservis',
@@ -59,6 +59,8 @@ const T = {
     gallery2_caption: 'Inspection et relevé terrain',
     gallery3_caption: 'Isolateurs et équipements HT',
     gallery4_caption: 'Analyse de schémas et plans',
+    gallery5_caption: "Réseaux de transport d'électricité",
+    gallery6_caption: 'Lignes haute tension',
 
     markets_tag:   'Couverture mondiale',
     markets_title: 'Nos marchés',
@@ -74,7 +76,7 @@ const T = {
 
     contact_tag:    'Contactez-nous',
     contact_title:  'Démarrons votre étude',
-    contact_desc:   'Remplissez le formulaire et un ingénieur vous contacte sous 24 heures ouvrables.',
+    contact_desc:   "Une question, un projet ou besoin de notre expertise ? Remplissez le formulaire et un ingénieur vous répond sous 24 heures ouvrables.",
     contact_remote: 'Service à distance disponible',
 
     form_name:           'Nom complet *',
@@ -108,7 +110,7 @@ const T = {
     hero_badge: 'Certified electrical engineering',
     hero_title: 'Precision electrical<br><span class="shiny">engineering studies.</span>',
     hero_sub:   'Power system studies compliant with CSA Z462, NFPA 70E and IEEE 1584 standards.<br>Canada · USA · Algeria',
-    hero_cta1:  'Request a Study',
+    hero_cta1:  "Let's Talk About Your Project",
     hero_cta2:  'Our Services',
 
     stat_countries: 'Countries Served',
@@ -153,6 +155,8 @@ const T = {
     gallery2_caption: 'Field Inspection & Survey',
     gallery3_caption: 'HV Insulators & Equipment',
     gallery4_caption: 'Diagram & Drawing Review',
+    gallery5_caption: 'Power Transmission Networks',
+    gallery6_caption: 'High-Voltage Lines',
 
     markets_tag:   'Global Coverage',
     markets_title: 'Our Markets',
@@ -168,7 +172,7 @@ const T = {
 
     contact_tag:    'Contact Us',
     contact_title:  "Let's Start Your Study",
-    contact_desc:   'Fill out the form and an engineer will contact you within 24 business hours.',
+    contact_desc:   "Have a question, a project, or need our expertise? Fill out the form and an engineer will respond within 24 business hours.",
     contact_remote: 'Remote service available',
 
     form_name:           'Full Name *',
@@ -202,7 +206,7 @@ const T = {
     hero_badge: 'هندسة كهربائية معتمدة',
     hero_title: 'هندسة كهربائية.<br><span class="shiny">دقة. احتراف.</span>',
     hero_sub:   'دراسات منظومات الطاقة وفق معايير CSA Z462 و NFPA 70E و IEEE 1584.<br>كندا · الولايات المتحدة · الجزائر',
-    hero_cta1:  'طلب دراسة',
+    hero_cta1:  'تحدث معنا عن مشروعك',
     hero_cta2:  'خدماتنا',
 
     stat_countries: 'دول نخدمها',
@@ -247,6 +251,8 @@ const T = {
     gallery2_caption: 'الفحص والمسح الميداني',
     gallery3_caption: 'عوازل ومعدات الجهد العالي',
     gallery4_caption: 'تحليل المخططات والرسومات',
+    gallery5_caption: 'شبكات نقل الكهرباء',
+    gallery6_caption: 'خطوط الضغط العالي',
 
     markets_tag:   'تغطية عالمية',
     markets_title: 'أسواقنا',
@@ -262,7 +268,7 @@ const T = {
 
     contact_tag:    'تواصل معنا',
     contact_title:  'لنبدأ دراستك',
-    contact_desc:   'املأ النموذج وسيتصل بك مهندس خلال 24 ساعة عمل.',
+    contact_desc:   'هل لديك سؤال، مشروع، أو تحتاج إلى خبرتنا؟ املأ النموذج وسيرد عليك مهندس خلال 24 ساعة عمل.',
     contact_remote: 'الخدمة عن بُعد متاحة',
 
     form_name:           'الاسم الكامل *',
