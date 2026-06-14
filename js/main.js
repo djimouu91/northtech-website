@@ -39,6 +39,12 @@ const T = {
     s6_title: 'Analyse harmonique',
     s6_desc:  "Évaluation des distorsions harmoniques (THD) et recommandations de filtrage conformes à IEEE 519.",
 
+    s7_title: 'Collecte de données terrain',
+    s7_desc:  "Inventaire des actifs électriques, relevé des plaques signalétiques et mesures sur site via outils numériques, pour alimenter vos études et schémas unifilaires.",
+    s7_tag1:  'Audit terrain',
+    s7_tag2:  "Inventaire d'actifs",
+    s7_tag3:  'Relevé numérique',
+
     badge_required: 'Obligation légale',
 
     about_tag:    'Notre différence',
@@ -58,7 +64,7 @@ const T = {
     gallery1_caption: 'Sous-stations haute tension',
     gallery2_caption: 'Inspection et relevé terrain',
     gallery3_caption: 'Isolateurs et équipements HT',
-    gallery4_caption: 'Analyse de schémas et plans',
+    gallery4_caption: 'Conception et mise à jour des schémas unifilaires',
     gallery5_caption: "Réseaux de transport d'électricité",
     gallery6_caption: 'Lignes haute tension',
 
@@ -135,6 +141,12 @@ const T = {
     s6_title: 'Harmonic Analysis',
     s6_desc:  'Evaluate harmonic distortion (THD) and provide filter recommendations compliant with IEEE 519.',
 
+    s7_title: 'Field Data Collection',
+    s7_desc:  'On-site inventory of electrical assets, nameplate data collection, and field measurements via digital tools — feeding directly into your studies and single-line diagrams.',
+    s7_tag1:  'Field Audit',
+    s7_tag2:  'Asset Inventory',
+    s7_tag3:  'Digital Survey',
+
     badge_required: 'Legal requirement',
 
     about_tag:    'Our difference',
@@ -154,7 +166,7 @@ const T = {
     gallery1_caption: 'High-Voltage Substations',
     gallery2_caption: 'Field Inspection & Survey',
     gallery3_caption: 'HV Insulators & Equipment',
-    gallery4_caption: 'Diagram & Drawing Review',
+    gallery4_caption: 'Single-Line Diagram Design & Updates',
     gallery5_caption: 'Power Transmission Networks',
     gallery6_caption: 'High-Voltage Lines',
 
@@ -231,6 +243,12 @@ const T = {
     s6_title: 'تحليل التوافقيات',
     s6_desc:  'تقييم التشويه التوافقي الكلي (THD) وتقديم توصيات التصفية وفق معيار IEEE 519.',
 
+    s7_title: 'جمع البيانات الميدانية',
+    s7_desc:  'جرد الأصول الكهربائية، تسجيل بيانات اللوحات التعريفية، وقياسات ميدانية باستخدام أدوات رقمية، لتغذية دراساتكم ومخططاتكم أحادية الخط مباشرة.',
+    s7_tag1:  'تدقيق ميداني',
+    s7_tag2:  'جرد الأصول',
+    s7_tag3:  'مسح رقمي',
+
     badge_required: 'إلزامي قانونياً',
 
     about_tag:    'ما يميزنا',
@@ -250,7 +268,7 @@ const T = {
     gallery1_caption: 'محطات التحويل عالية الجهد',
     gallery2_caption: 'الفحص والمسح الميداني',
     gallery3_caption: 'عوازل ومعدات الجهد العالي',
-    gallery4_caption: 'تحليل المخططات والرسومات',
+    gallery4_caption: 'تصميم وتحديث المخططات أحادية الخط',
     gallery5_caption: 'شبكات نقل الكهرباء',
     gallery6_caption: 'خطوط الضغط العالي',
 
