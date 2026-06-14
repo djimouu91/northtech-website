@@ -15,7 +15,6 @@ const T = {
     hero_sub:    "Études de réseaux électriques conformes aux normes CSA Z462, NFPA 70E et IEEE 1584.<br>Canada · USA · Algérie",
     hero_cta1:   'Demander une étude',
     hero_cta2:   'Nos services',
-    hero_visual_badge: 'Analyse en temps réel',
 
     stat_countries: 'Pays desservis',
     stat_langs:     'Langues',
@@ -109,7 +108,6 @@ const T = {
     hero_sub:   'Power system studies compliant with CSA Z462, NFPA 70E and IEEE 1584 standards.<br>Canada · USA · Algeria',
     hero_cta1:  'Request a Study',
     hero_cta2:  'Our Services',
-    hero_visual_badge: 'Real-time analysis',
 
     stat_countries: 'Countries Served',
     stat_langs:     'Languages',
@@ -203,7 +201,6 @@ const T = {
     hero_sub:   'دراسات منظومات الطاقة وفق معايير CSA Z462 و NFPA 70E و IEEE 1584.<br>كندا · الولايات المتحدة · الجزائر',
     hero_cta1:  'طلب دراسة',
     hero_cta2:  'خدماتنا',
-    hero_visual_badge: 'تحليل في الوقت الفعلي',
 
     stat_countries: 'دول نخدمها',
     stat_langs:     'لغات',
