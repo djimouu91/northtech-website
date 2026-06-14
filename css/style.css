@@ -147,6 +147,27 @@ input, select, textarea { font-family: inherit; }
 
 .btn--block { width: 100%; }
 
+/* Pill CTA with animated arrow icon */
+.btn--pill {
+  border-radius: 100px;
+  padding: 14px 28px;
+}
+.btn__arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform .35s cubic-bezier(.16,1,.3,1);
+}
+.btn--pill:hover .btn__arrow {
+  transform: translateX(5px);
+}
+.rtl .btn__arrow {
+  transform: scaleX(-1);
+}
+.rtl .btn--pill:hover .btn__arrow {
+  transform: scaleX(-1) translateX(5px);
+}
+
 /* === SCROLL ANIMATION === */
 .fade-in {
   opacity: 0;
@@ -401,6 +422,25 @@ input, select, textarea { font-family: inherit; }
   color: var(--white);
   margin-bottom: 22px;
   max-width: 780px;
+}
+
+/* Animated shiny gradient sweep on the title accent line */
+.hero__title .shiny {
+  background-image: linear-gradient(100deg,
+    var(--blue-light) 0%,
+    var(--blue-light) 35%,
+    #ffffff 50%,
+    var(--blue-light) 65%,
+    var(--blue-light) 100%);
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shineSweep 3s linear infinite;
+}
+@keyframes shineSweep {
+  to { background-position: -120% 0; }
 }
 
 .hero__sub {

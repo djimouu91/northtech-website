@@ -11,7 +11,7 @@ const T = {
     nav_contact:  'Contact',
 
     hero_badge:  'Ingénierie électrique certifiée',
-    hero_title:  "L'ingénierie électrique<br>de précision.",
+    hero_title:  "L'ingénierie électrique<br><span class=\"shiny\">de précision.</span>",
     hero_sub:    "Études de réseaux électriques conformes aux normes CSA Z462, NFPA 70E et IEEE 1584.<br>Canada · USA · Algérie",
     hero_cta1:   'Demander une étude',
     hero_cta2:   'Nos services',
@@ -104,7 +104,7 @@ const T = {
     nav_contact:  'Contact',
 
     hero_badge: 'Certified electrical engineering',
-    hero_title: 'Precision electrical<br>engineering studies.',
+    hero_title: 'Precision electrical<br><span class="shiny">engineering studies.</span>',
     hero_sub:   'Power system studies compliant with CSA Z462, NFPA 70E and IEEE 1584 standards.<br>Canada · USA · Algeria',
     hero_cta1:  'Request a Study',
     hero_cta2:  'Our Services',
@@ -197,7 +197,7 @@ const T = {
     nav_contact:  'اتصل بنا',
 
     hero_badge: 'هندسة كهربائية معتمدة',
-    hero_title: 'هندسة كهربائية.<br>دقة. احتراف.',
+    hero_title: 'هندسة كهربائية.<br><span class="shiny">دقة. احتراف.</span>',
     hero_sub:   'دراسات منظومات الطاقة وفق معايير CSA Z462 و NFPA 70E و IEEE 1584.<br>كندا · الولايات المتحدة · الجزائر',
     hero_cta1:  'طلب دراسة',
     hero_cta2:  'خدماتنا',
