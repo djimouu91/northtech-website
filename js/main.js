@@ -10,6 +10,7 @@ const T = {
     nav_markets:  'Marchés',
     nav_contact:  'Contact',
 
+    hero_tagline: 'Disponibilités ouvertes — Projets 2026',
     hero_badge:  'Ingénierie électrique certifiée',
     hero_title:  "L'ingénierie électrique<br><span class=\"shiny\">de précision.</span>",
     hero_sub:    "Études de réseaux électriques conformes aux normes CSA Z462, NFPA 70E et IEEE 1584.<br>Canada · USA · Algérie",
@@ -103,6 +104,7 @@ const T = {
     nav_markets:  'Markets',
     nav_contact:  'Contact',
 
+    hero_tagline: 'Now booking — 2026 projects',
     hero_badge: 'Certified electrical engineering',
     hero_title: 'Precision electrical<br><span class="shiny">engineering studies.</span>',
     hero_sub:   'Power system studies compliant with CSA Z462, NFPA 70E and IEEE 1584 standards.<br>Canada · USA · Algeria',
@@ -196,6 +198,7 @@ const T = {
     nav_markets:  'الأسواق',
     nav_contact:  'اتصل بنا',
 
+    hero_tagline: 'الحجز مفتوح — مشاريع 2026',
     hero_badge: 'هندسة كهربائية معتمدة',
     hero_title: 'هندسة كهربائية.<br><span class="shiny">دقة. احتراف.</span>',
     hero_sub:   'دراسات منظومات الطاقة وفق معايير CSA Z462 و NFPA 70E و IEEE 1584.<br>كندا · الولايات المتحدة · الجزائر',
