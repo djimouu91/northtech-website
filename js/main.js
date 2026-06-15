@@ -66,7 +66,7 @@ const T = {
     gallery3_caption: 'Programmation de relais de protection',
     gallery4_caption: 'Conception et mise à jour des schémas unifilaires',
     gallery5_caption: "Réseaux de transport d'électricité",
-    gallery6_caption: 'Lignes haute tension',
+    gallery6_caption: 'Énergie commerciale et industrielle',
 
     markets_tag:   'Couverture mondiale',
     markets_title: 'Nos marchés',
@@ -168,7 +168,7 @@ const T = {
     gallery3_caption: 'Protection Relay Programming',
     gallery4_caption: 'Single-Line Diagram Design & Updates',
     gallery5_caption: 'Power Transmission Networks',
-    gallery6_caption: 'High-Voltage Lines',
+    gallery6_caption: 'Commercial & Industrial Energy',
 
     markets_tag:   'Global Coverage',
     markets_title: 'Our Markets',
@@ -270,7 +270,7 @@ const T = {
     gallery3_caption: 'برمجة مرحلات الحماية',
     gallery4_caption: 'تصميم وتحديث المخططات أحادية الخط',
     gallery5_caption: 'شبكات نقل الكهرباء',
-    gallery6_caption: 'خطوط الضغط العالي',
+    gallery6_caption: 'الطاقة التجارية والصناعية',
 
     markets_tag:   'تغطية عالمية',
     markets_title: 'أسواقنا',
