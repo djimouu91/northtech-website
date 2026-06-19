@@ -80,8 +80,8 @@ const T = {
     comply_label: 'Normes maîtrisées',
 
     contact_tag:    'Contactez-nous',
-    contact_title:  'Démarrons votre étude',
-    contact_desc:   "Une question, un projet ou besoin de notre expertise ? Remplissez le formulaire et un ingénieur vous répond sous 24 heures ouvrables.",
+    contact_title:  "Des services d'ingénierie électrique sur lesquels vous pouvez compter",
+    contact_desc:   "Peu importe votre projet — étude, relevé terrain ou schéma unifilaire — NorthTech est là pour répondre à vos questions et vous accompagner. Parlez à un ingénieur dès aujourd'hui.",
     contact_remote: 'Service à distance disponible',
 
     form_name:           'Nom complet *',
@@ -181,8 +181,8 @@ const T = {
     comply_label: 'Standards mastered',
 
     contact_tag:    'Contact Us',
-    contact_title:  "Let's Start Your Study",
-    contact_desc:   "Have a question, a project, or need our expertise? Fill out the form and an engineer will respond within 24 business hours.",
+    contact_title:  "Electrical Engineering Services You Can Count On",
+    contact_desc:   "Whatever your project — power study, field survey, or single-line diagram — NorthTech is here to answer your questions and support you every step of the way. Speak with an engineer today.",
     contact_remote: 'Remote service available',
 
     form_name:           'Full Name *',
@@ -282,8 +282,8 @@ const T = {
     comply_label: 'المعايير المتقنة',
 
     contact_tag:    'تواصل معنا',
-    contact_title:  'لنبدأ دراستك',
-    contact_desc:   'هل لديك سؤال، مشروع، أو تحتاج إلى خبرتنا؟ املأ النموذج وسيرد عليك مهندس خلال 24 ساعة عمل.',
+    contact_title:  'خدمات هندسة كهربائية يمكنك الاعتماد عليها',
+    contact_desc:   'مهما كان مشروعك — دراسة، مسح ميداني، أو مخطط أحادي الخط — NorthTech هنا للإجابة على أسئلتك ومرافقتك في كل خطوة. تحدث مع مهندس اليوم.',
     contact_remote: 'الخدمة عن بُعد متاحة',
 
     form_name:           'الاسم الكامل *',
