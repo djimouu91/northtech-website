@@ -980,7 +980,7 @@ input, select, textarea { font-family: inherit; }
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--dark);
+  color: var(--blue);
   margin-bottom: 6px;
 }
 
@@ -989,11 +989,11 @@ input, select, textarea { font-family: inherit; }
 .form__group textarea {
   width: 100%;
   padding: 11px 14px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #93C5FD;
   border-radius: var(--r-sm);
   font-size: 15px;
   color: var(--dark);
-  background: var(--white);
+  background: #EFF6FF;
   transition: border-color var(--ease), box-shadow var(--ease);
   appearance: none;
   -webkit-appearance: none;
@@ -1003,7 +1003,8 @@ input, select, textarea { font-family: inherit; }
 .form__group textarea:focus {
   outline: none;
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(24,95,165,.1);
+  background: #DBEAFE;
+  box-shadow: 0 0 0 3px rgba(24,95,165,.15);
 }
 .form__group input.error,
 .form__group select.error,
