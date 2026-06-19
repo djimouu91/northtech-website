@@ -522,31 +522,31 @@ input, select, textarea { font-family: inherit; }
 }
 
 .service-card {
-  background: var(--white);
-  border: 1.5px solid var(--border);
+  background: linear-gradient(145deg, var(--navy) 0%, var(--blue) 100%);
+  border: 1.5px solid transparent;
   border-radius: var(--r-md);
   padding: 30px;
   position: relative;
   transition: all var(--ease-out);
+  color: var(--white);
 }
 .service-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
   transform: translateY(-5px);
+  border-color: rgba(255,255,255,.2);
 }
 
-/* Featured: Arc Flash */
+/* Featured: Arc Flash — brighter accent */
 .service-card--featured {
-  background: linear-gradient(145deg, var(--navy) 0%, var(--blue) 100%);
-  border-color: transparent;
-  color: var(--white);
+  background: linear-gradient(145deg, #0C447C 0%, #2563EB 100%);
+  border-color: rgba(255,255,255,.15);
 }
 .service-card--featured:hover {
   box-shadow: var(--shadow-xl);
   transform: translateY(-5px);
 }
 .service-card--featured .service-card__desc {
-  color: rgba(255,255,255,.78);
+  color: rgba(255,255,255,.82);
 }
 
 .service-card__badge {
@@ -566,7 +566,7 @@ input, select, textarea { font-family: inherit; }
 .service-card__icon {
   width: 50px;
   height: 50px;
-  background: var(--blue-light);
+  background: rgba(255,255,255,.14);
   border-radius: 11px;
   display: flex;
   align-items: center;
@@ -575,7 +575,7 @@ input, select, textarea { font-family: inherit; }
   margin-bottom: 18px;
 }
 .service-card--featured .service-card__icon {
-  background: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.18);
 }
 .service-card__icon svg { width: 100%; height: 100%; }
 
@@ -638,14 +638,14 @@ input, select, textarea { font-family: inherit; }
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -.2px;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 10px;
 }
 .service-card--featured .service-card__title { color: var(--white); }
 
 .service-card__desc {
   font-size: 14px;
-  color: var(--gray);
+  color: rgba(255,255,255,.78);
   line-height: 1.65;
   margin-bottom: 18px;
 }
@@ -655,22 +655,28 @@ input, select, textarea { font-family: inherit; }
   flex-wrap: wrap;
   gap: 6px;
   padding-top: 16px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,.18);
 }
-.service-card--featured .service-card__norms { border-color: rgba(255,255,255,.18); }
 
 .service-card__norms span {
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: .2px;
-  color: var(--blue);
-  background: var(--blue-light);
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.16);
   padding: 3px 8px;
   border-radius: 4px;
 }
 .service-card__norms--light span {
   background: rgba(255,255,255,.16);
   color: rgba(255,255,255,.88);
+}
+.service-card__icon svg path,
+.service-card__icon svg rect,
+.service-card__icon svg circle,
+.service-card__icon svg line,
+.service-card__icon svg polyline {
+  stroke: rgba(255,255,255,.85);
 }
 
 /* ============================================
