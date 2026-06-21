@@ -944,6 +944,23 @@ input, select, textarea { font-family: inherit; }
   gap: 22px;
 }
 
+.markets__grid--single {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.market-card--full {
+  background: linear-gradient(145deg, var(--navy) 0%, var(--blue) 100%);
+  color: var(--white);
+  border-color: transparent;
+}
+.market-card--full .market-card__country { color: var(--white); }
+.market-card--full .market-card__region { color: rgba(255,255,255,.7); }
+.market-card--full .market-card__norms li { color: rgba(255,255,255,.85); border-color: rgba(255,255,255,.15); }
+.market-card--full .lang-tag { background: rgba(255,255,255,.15); color: var(--white); }
+.market-card--full .market-card__clients { color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); }
+
 .market-card {
   border: 1.5px solid var(--border);
   border-radius: var(--r-md);
