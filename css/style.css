@@ -1045,6 +1045,58 @@ input, select, textarea { font-family: inherit; }
 }
 
 /* ============================================
+   PROBLEMS WE SOLVE
+   ============================================ */
+.problems { background: #EFF6FF; }
+
+.problems__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--white);
+  border-radius: var(--r-md);
+  padding: 22px 24px;
+  border-left: 4px solid #F59E0B;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  transition: transform var(--ease-out), box-shadow var(--ease-out);
+}
+.problem-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.09);
+}
+
+.problem-item__icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: #FEF3C7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.problem-item__icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #D97706;
+}
+
+.problem-item p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--dark);
+  line-height: 1.5;
+  font-weight: 500;
+  padding-top: 8px;
+}
+
+/* ============================================
    COMPLIANCE BANNER
    ============================================ */
 .compliance {
@@ -1439,6 +1491,9 @@ input, select, textarea { font-family: inherit; }
   /* Gallery */
   .gallery__grid { grid-template-columns: 1fr 1fr; }
   .gallery__item { min-height: 220px; }
+
+  /* Problems */
+  .problems__grid { grid-template-columns: 1fr; }
 
   /* Markets */
   .markets__grid { grid-template-columns: 1fr; }
