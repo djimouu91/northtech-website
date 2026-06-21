@@ -357,11 +357,11 @@ input, select, textarea { font-family: inherit; }
 
 /* Animated current flowing along the hero waveform */
 .hero__waveform {
-  stroke-dasharray: 8 4;
-  animation: currentFlow 4s linear infinite;
+  stroke-dasharray: 12 6;
+  animation: currentFlow 10s linear infinite;
 }
 @keyframes currentFlow {
-  to { stroke-dashoffset: -96; }
+  to { stroke-dashoffset: -144; }
 }
 
 .hero__content {
