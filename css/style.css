@@ -1063,6 +1063,80 @@ input, select, textarea { font-family: inherit; }
 .compliance__dot { color: #93B8D4; font-weight: 400; }
 
 /* ============================================
+   CTA DUAL (Consultation + Quote)
+   ============================================ */
+.cta-dual {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  padding: var(--py) 0;
+}
+
+.cta-dual__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.cta-dual__card {
+  border-radius: var(--r-md);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-dual__card--light {
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.2);
+}
+
+.cta-dual__card--dark {
+  background: var(--white);
+  border: 1.5px solid transparent;
+}
+
+.cta-dual__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--white);
+}
+.cta-dual__card--dark .cta-dual__icon {
+  color: var(--blue);
+}
+
+.cta-dual__icon svg { width: 100%; height: 100%; }
+
+.cta-dual__card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
+}
+.cta-dual__card--dark h3 {
+  color: var(--navy);
+}
+
+.cta-dual__card p {
+  font-size: 15px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+.cta-dual__card--dark p {
+  color: var(--gray);
+}
+
+.btn--white {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.btn--white:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* ============================================
    CONTACT
    ============================================ */
 .contact { background: var(--gray-light); }
@@ -1369,6 +1443,7 @@ input, select, textarea { font-family: inherit; }
   .services__grid  { grid-template-columns: 1fr; }
   .about__grid     { grid-template-columns: 1fr; }
   .pricing__grid   { grid-template-columns: 1fr; }
+  .cta-dual__grid  { grid-template-columns: 1fr; }
   .gallery__grid   { grid-template-columns: 1fr; }
   .hero__ctas      { flex-direction: column; }
   .hero__ctas .btn { width: 100%; justify-content: center; }
