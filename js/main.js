@@ -61,6 +61,18 @@ const T = {
     s8_tag2:  'Maintenance préventive',
     s8_tag3:  "Rapports d'état",
 
+    s9_title: "Étude GPR — Montée de potentiel de terre",
+    s9_desc:  "Calcul de la montée de potentiel de terre (Ground Potential Rise) lors de défauts en sous-station — protection des personnes et des équipements de télécommunication selon IEEE Std 80 et CSA C22.3.",
+    s9_tag1:  'IEEE Std 80',
+    s9_tag2:  'Sous-stations HT',
+    s9_tag3:  'Sécurité du personnel',
+
+    s10_title: "Étude de surtension transitoire",
+    s10_desc:  "Simulation des surtensions de manœuvre et de foudre pour valider la coordination des parafoudres et la tenue diélectrique des équipements — conforme IEEE C62.41 et IEC 62271.",
+    s10_tag1:  'Surtension de manœuvre',
+    s10_tag2:  'Parafoudres',
+    s10_tag3:  'IEEE C62.41',
+
     badge_required: 'Obligation légale',
 
     about_tag:    'Notre différence',
@@ -82,6 +94,8 @@ const T = {
     gallery4_caption: 'Conception et mise à jour des schémas unifilaires',
     gallery5_caption: "Réseaux de transport d'électricité",
     gallery6_caption: 'Énergie commerciale et industrielle',
+    gallery7_caption: "Études GPR — Sous-stations haute tension",
+    gallery8_caption: "Inspection et gestion des actifs électriques",
 
     markets_tag:   'Couverture nationale',
     markets_title: 'Notre territoire',
@@ -216,6 +230,18 @@ const T = {
     s8_tag2:  'Preventive Maintenance',
     s8_tag3:  'Condition Reports',
 
+    s9_title: 'GPR Study — Ground Potential Rise',
+    s9_desc:  'Calculate ground potential rise during substation faults — protecting personnel and telecommunication equipment per IEEE Std 80 and CSA C22.3.',
+    s9_tag1:  'IEEE Std 80',
+    s9_tag2:  'HV Substations',
+    s9_tag3:  'Personnel Safety',
+
+    s10_title: 'Transient Voltage Study',
+    s10_desc:  'Simulate switching and lightning surges to validate surge arrester coordination and equipment dielectric withstand — compliant with IEEE C62.41 and IEC 62271.',
+    s10_tag1:  'Switching Surges',
+    s10_tag2:  'Surge Arresters',
+    s10_tag3:  'IEEE C62.41',
+
     badge_required: 'Legal requirement',
 
     about_tag:    'Our difference',
@@ -237,6 +263,8 @@ const T = {
     gallery4_caption: 'Single-Line Diagram Design & Updates',
     gallery5_caption: 'Power Transmission Networks',
     gallery6_caption: 'Commercial & Industrial Energy',
+    gallery7_caption: 'GPR Studies — High-Voltage Substations',
+    gallery8_caption: 'Electrical Asset Inspection & Management',
 
     markets_tag:   'National Coverage',
     markets_title: 'Our Territory',

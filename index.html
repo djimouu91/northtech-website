@@ -325,6 +325,56 @@
           </div>
         </div>
 
+        <!-- s9 — GPR Study (inspired by Kroon Engineering Services) -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <!-- Fault current arrow going down -->
+              <path d="M20 5v10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 12l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Ground surface -->
+              <line x1="8" y1="19" x2="32" y2="19" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              <!-- Rising potential arcs spreading outward -->
+              <path d="M13 19 Q20 14 27 19" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M8 19 Q20 11 32 19" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <path d="M4 19 Q20 8 36 19" stroke="white" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.25"/>
+              <!-- Ground symbol -->
+              <line x1="20" y1="19" x2="20" y2="25" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="13" y1="25" x2="27" y2="25" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="15.5" y1="28.5" x2="24.5" y2="28.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="18" y1="32" x2="22" y2="32" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s9_title">Étude GPR — Montée de potentiel de terre</h3>
+          <p class="service-card__desc" data-i18n="s9_desc">Calcul de la montée de potentiel de terre lors de défauts en sous-station — protection des personnes et des équipements de télécommunication selon IEEE Std 80 et CSA C22.3.</p>
+          <div class="service-card__norms">
+            <span data-i18n="s9_tag1">IEEE Std 80</span><span data-i18n="s9_tag2">Sous-stations HT</span><span data-i18n="s9_tag3">Sécurité du personnel</span>
+          </div>
+        </div>
+
+        <!-- s10 — Transient Voltage Study (inspired by Kroon Engineering Services) -->
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <!-- Baseline -->
+              <line x1="4" y1="26" x2="36" y2="26" stroke="white" stroke-width="1" opacity="0.35" stroke-linecap="round"/>
+              <!-- Waveform with transient spike -->
+              <path d="M4,26 L7,26 Q9,26 10,23 Q11,20 12,23 Q13,26 15,26 L16,26 L18,7 L20,37 L21,26 Q22,26 23,23 Q25,20 26,23 Q27,26 28,26 L36,26"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Spike peak highlight -->
+              <circle cx="18" cy="9" r="3" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.15)"/>
+              <!-- Warning mark inside peak -->
+              <line x1="18" y1="7.5" x2="18" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="18" cy="11.5" r="0.8" fill="white"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s10_title">Étude de surtension transitoire</h3>
+          <p class="service-card__desc" data-i18n="s10_desc">Simulation des surtensions de manœuvre et de foudre pour valider la coordination des parafoudres et la tenue diélectrique des équipements — conforme IEEE C62.41 et IEC 62271.</p>
+          <div class="service-card__norms">
+            <span data-i18n="s10_tag1">Surtension de manœuvre</span><span data-i18n="s10_tag2">Parafoudres</span><span data-i18n="s10_tag3">IEEE C62.41</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -558,6 +608,18 @@
           <img src="images/transmission-sunset-glow.jpg" alt="Pylônes de transmission électrique au coucher du soleil" loading="lazy">
           <figcaption>
             <span data-i18n="gallery6_caption">Énergie commerciale et industrielle</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery__item fade-in">
+          <img src="images/gpr-substation.jpg" alt="Sous-station électrique haute tension avec lignes de transport" loading="lazy">
+          <figcaption>
+            <span data-i18n="gallery7_caption">Études GPR — Sous-stations haute tension</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery__item fade-in">
+          <img src="images/switchgear-panel.jpg" alt="Panneau disjoncteurs et appareillage de commutation industriel" loading="lazy">
+          <figcaption>
+            <span data-i18n="gallery8_caption">Inspection et gestion des actifs électriques</span>
           </figcaption>
         </figure>
       </div>
