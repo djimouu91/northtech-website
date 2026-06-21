@@ -55,6 +55,12 @@ const T = {
     s7_tag2:  "Inventaire d'actifs",
     s7_tag3:  'Relevé numérique',
 
+    s8_title: "Gestion des actifs électriques",
+    s8_desc:  "Registre numérique de vos équipements (transformateurs, disjoncteurs, tableaux), suivi de leur état de santé, planification de la maintenance préventive et rapports de conformité — pour maximiser la durée de vie de votre infrastructure.",
+    s8_tag1:  'Registre numérique',
+    s8_tag2:  'Maintenance préventive',
+    s8_tag3:  "Rapports d'état",
+
     badge_required: 'Obligation légale',
 
     about_tag:    'Notre différence',
@@ -203,6 +209,12 @@ const T = {
     s7_tag1:  'Field Audit',
     s7_tag2:  'Asset Inventory',
     s7_tag3:  'Digital Survey',
+
+    s8_title: 'Electrical Asset Management',
+    s8_desc:  'Digital registry of your electrical equipment (transformers, breakers, switchgear, panels), condition tracking, preventive maintenance scheduling, and compliance reporting — to maximize the lifespan of your infrastructure.',
+    s8_tag1:  'Digital Registry',
+    s8_tag2:  'Preventive Maintenance',
+    s8_tag3:  'Condition Reports',
 
     badge_required: 'Legal requirement',
 
