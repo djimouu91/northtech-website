@@ -180,7 +180,7 @@
       <div class="services__grid">
 
         <!-- Card 1 — SLD -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s4" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="34" height="34" rx="4" stroke="#185FA5" stroke-width="1.8"/>
@@ -199,7 +199,7 @@
         </div>
 
         <!-- Card 2 — Court-circuit -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s1" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <circle cx="20" cy="20" r="16" stroke="#185FA5" stroke-width="1.8"/>
@@ -215,7 +215,7 @@
         </div>
 
         <!-- Card 3 — Coordination -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s2" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <rect x="5" y="27" width="7" height="9" rx="1" stroke="#185FA5" stroke-width="1.8"/>
@@ -232,7 +232,7 @@
         </div>
 
         <!-- Card 4 — Arc Flash (featured) -->
-        <div class="service-card service-card--featured fade-in">
+        <div class="service-card service-card--featured fade-in" data-service="s3" role="button" tabindex="0">
           <span class="service-card__badge" data-i18n="badge_required">Obligation légale</span>
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -249,7 +249,7 @@
         </div>
 
         <!-- Card 5 — Load Flow -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s5" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <path d="M5 32 Q12 14 20 20 Q28 26 35 8" stroke="#185FA5" stroke-width="2.2" stroke-linecap="round" fill="none"/>
@@ -267,7 +267,7 @@
         </div>
 
         <!-- Card 6 — Harmonics -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s6" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <path d="M4 20 Q8 8 12 20 Q16 32 20 20 Q24 8 28 20 Q32 32 36 20"
@@ -283,7 +283,7 @@
           </div>
         </div>
 
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s7" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <rect x="8" y="6" width="24" height="30" rx="3" stroke="#185FA5" stroke-width="2" fill="none"/>
@@ -299,7 +299,7 @@
           </div>
         </div>
 
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s8" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <!-- Central hub (dashboard) -->
@@ -326,7 +326,7 @@
         </div>
 
         <!-- s9 — GPR Study (inspired by Kroon Engineering Services) -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s9" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <!-- Fault current arrow going down -->
@@ -353,7 +353,7 @@
         </div>
 
         <!-- s10 — Transient Voltage Study (inspired by Kroon Engineering Services) -->
-        <div class="service-card fade-in">
+        <div class="service-card fade-in" data-service="s10" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <!-- Baseline -->
@@ -854,5 +854,14 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- ============ SERVICE MODAL ============ -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal" id="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" id="modal-close" aria-label="Fermer">&#x2715;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -657,12 +657,454 @@ function initForm() {
   });
 }
 
+
+/* ============================================================
+   SERVICE DETAIL MODALS
+   ============================================================ */
+var _currentService = null;
+
+var MODALS = {
+  fr: {
+    s1: {
+      title: "Étude de court-circuit",
+      subtitle: "CSA C22.1 · IEC 60909 · IEEE Std 551",
+      badge: null,
+      overview: "Calcul des courants de défaut maximaux en chaque point du réseau pour vérifier que vos équipements de protection (disjoncteurs, fusibles, switchgear) sont correctement calibrés pour les interrompre en toute sécurité.",
+      faq: [
+        { q: "Pourquoi réaliser une étude de court-circuit ?",
+          a: "Un équipement dont le pouvoir de coupure est inférieur au courant de défaut peut exploser lors d'un incident, causant des dommages majeurs et mettant en danger le personnel. Cette étude garantit la conformité de chaque équipement." },
+        { q: "Quand faut-il la mettre à jour ?",
+          a: "À chaque modification significative du réseau : ajout de transformateur, groupe électrogène, connexion à une nouvelle source ou modification de la topologie." },
+        { q: "Quels livrables sont fournis ?",
+          a: "Rapport avec courants de court-circuit en chaque noeud, vérification des calibres et recommandations de mise à niveau. Livrables en PDF et fichier ETAP/SKM." }
+      ],
+      tags: ["CSA C22.1","IEEE Std 551","IEC 60909","ETAP","SKM PowerTools"],
+      cta: "Demander une étude"
+    },
+    s2: {
+      title: "Coordination des protections",
+      subtitle: "IEEE 242 · ETAP · Courbes TCC",
+      badge: null,
+      overview: "Analyse de la sélectivité des dispositifs de protection afin que lors d'un défaut, seul le dispositif le plus proche du défaut se déclenche — minimisant les interruptions et protégeant tout le réseau.",
+      faq: [
+        { q: "Qu'est-ce que la coordination des protections ?",
+          a: "La coordination assure la séquence de déclenchement des protections pour que le défaut soit isolé au plus près de sa source, sans couper le reste de l'installation." },
+        { q: "Quels outils et livrables ?",
+          a: "Modélisation sous ETAP ou SKM, analyse des courbes temps-courant (TCC) et paramètres de réglage des relais. Livrable principal : rapport TCC avec réglages recommandés." },
+        { q: "Pourquoi est-ce critique pour les installations industrielles ?",
+          a: "Une mauvaise coordination entraîne des arrêts non planifiés, des difficultés avec les assureurs et des risques de cascade de défauts qui endommagent le réseau." }
+      ],
+      tags: ["IEEE 242","ETAP","SKM","Courbes TCC","Réglage relais"],
+      cta: "Demander une étude"
+    },
+    s3: {
+      title: "Étude arc flash",
+      subtitle: "CSA Z462 · NFPA 70E · IEEE 1584-2018 · EasyPower",
+      badge: "Obligation légale",
+      overview: "Calcul de l'énergie incidente (cal/cm²) libérée lors d'un arc électrique, délimitation des zones de danger (arc flash boundary), détermination des EPI requis et génération des étiquettes réglementaires conformes à CSA Z462.",
+      faq: [
+        { q: "Qu'est-ce qu'un arc flash ?",
+          a: "Un arc flash est une libération explosive d'énergie électrique à travers l'air entre deux conducteurs sous tension. Les températures atteignent 19 400 °C — plus chaudes que la surface du soleil — causant brûlures graves, explosions et décès." },
+        { q: "Cette étude est-elle obligatoire ?",
+          a: "Oui. La norme CSA Z462 et le Code canadien du travail exigent une évaluation du risque arc flash pour tout travail en présence de tension. Les employeurs non conformes s'exposent à des poursuites pénales et civiles." },
+        { q: "Que comprend l'étude NorthTech ?",
+          a: "Modélisation complète sous EasyPower/ETAP, calcul de l'énergie incidente sur chaque équipement, délimitation des zones, catégories EPI et génération des étiquettes réglementaires (voir étiquette ci-dessous)." },
+        { q: "À quelle fréquence l'étude doit-elle être mise à jour ?",
+          a: "Après tout changement significatif du réseau ou tous les 5 ans au minimum. Les études antérieures à la révision IEEE 1584-2018 doivent être refaites." }
+      ],
+      tags: ["CSA Z462","NFPA 70E","IEEE 1584-2018","EasyPower","ETAP","Étiquettes EPI"],
+      cta: "Demander une étude arc flash",
+      show_label: true
+    },
+    s4: {
+      title: "Schémas unifilaires (SLD)",
+      subtitle: "ANSI/IEEE Std 315 · AutoCAD · SVG",
+      badge: null,
+      overview: "Relevé terrain et conception des schémas unifilaires conformes ANSI/IEEE Std 315. Livrables en SVG vectoriel, PDF et AutoCAD DWG — fidèles à l'état réel de votre installation.",
+      faq: [
+        { q: "Pourquoi moderniser ses schémas unifilaires ?",
+          a: "Des SLD obsolètes constituent un risque opérationnel et sécuritaire majeur. En cas d'urgence, le personnel et les secours s'y réfèrent pour comprendre rapidement l'architecture du réseau." },
+        { q: "Quels formats livrez-vous ?",
+          a: "SVG vectoriel (zoomable sans perte), PDF et AutoCAD DWG — compatibles avec tous les systèmes documentaires et prêts à imprimer à n'importe quelle échelle." },
+        { q: "Réalisez-vous des relevés terrain ?",
+          a: "Oui. NorthTech effectue des relevés complets : plaques signalétiques, câbles, paramètres des disjoncteurs et relais, pour que le schéma reflète l'état réel de l'installation." }
+      ],
+      tags: ["ANSI/IEEE Std 315","AutoCAD DWG","SVG","PDF","Relevé terrain"],
+      cta: "Demander un SLD"
+    },
+    s5: {
+      title: "Écoulement de puissance",
+      subtitle: "IEEE 399 · ETAP · SKM",
+      badge: null,
+      overview: "Analyse de la distribution de puissance active (kW) et réactive (kVAR) pour optimiser les profils de tension, réduire les pertes et améliorer le facteur de puissance de vos installations.",
+      faq: [
+        { q: "À quoi sert une étude d'écoulement de puissance ?",
+          a: "Elle vérifie que les tensions restent dans les limites acceptables (±5 %), identifie les équipements surchargés et optimise la répartition des charges pour réduire les pertes énergétiques." },
+        { q: "Dans quels cas est-elle nécessaire ?",
+          a: "Lors de l'ajout de charges importantes (moteurs, VFD, datacentres), d'intégration d'énergies renouvelables, d'extension du réseau ou en cas de problèmes de tension." },
+        { q: "Quels livrables sont fournis ?",
+          a: "Rapport load flow avec profils de tension, taux de chargement des transformateurs et câbles, facteur de puissance par noeud, et recommandations (banques de condensateurs, réglage de prises)." }
+      ],
+      tags: ["IEEE 399","ETAP","Load Flow","Profil de tension","Facteur de puissance"],
+      cta: "Demander une analyse"
+    },
+    s6: {
+      title: "Analyse harmonique",
+      subtitle: "IEEE 519-2022 · IEC 61000 · IEEE 1250",
+      badge: null,
+      overview: "Évaluation des distorsions harmoniques courant et tension (THD) générées par les variateurs (VFD), onduleurs et charges non-linéaires, avec recommandations de filtrage conformes à IEEE 519-2022.",
+      faq: [
+        { q: "Quelles sont les conséquences des harmoniques ?",
+          a: "Surchauffe des transformateurs et câbles, déclenchements intempestifs de disjoncteurs, perturbations des équipements électroniques sensibles et augmentation des pertes énergétiques." },
+        { q: "Comment mesurez-vous les harmoniques ?",
+          a: "Par campagne de mesure terrain avec analyseurs de qualité d'énergie (Fluke 435, 1760), combinée à la modélisation sous ETAP pour simuler différents scénarios de charge." },
+        { q: "Quelles solutions recommandez-vous ?",
+          a: "Filtres passifs harmoniques, filtres actifs de puissance (FAP), réactances de ligne pour VFD, transformateurs zig-zag, ou isolation des charges polluantes." }
+      ],
+      tags: ["IEEE 519-2022","THD","VFD","Filtres harmoniques","IEC 61000"],
+      cta: "Demander une analyse"
+    },
+    s7: {
+      title: "Collecte de données terrain",
+      subtitle: "Audit · Inventaire · Relevé numérique",
+      badge: null,
+      overview: "Inventaire complet de vos actifs électriques sur site : plaques signalétiques, paramètres de configuration, documentation photographique et saisie numérique pour alimenter vos études avec des données précises et à jour.",
+      faq: [
+        { q: "Qu'est-ce qui est inventorié lors du relevé terrain ?",
+          a: "Transformateurs (kVA, rapport, groupe de connexion), disjoncteurs (calibre, pouvoir de coupure, réglages), câbles (section, longueur, type), relais de protection et tout équipement de distribution." },
+        { q: "Utilisez-vous des outils numériques ?",
+          a: "Oui. NorthTech utilise des tablettes et applications spécialisées pour la saisie terrain en temps réel avec export direct vers ETAP et SKM." },
+        { q: "Comment ce service se connecte-t-il aux études électriques ?",
+          a: "Les données collectées alimentent directement les modèles de simulation. Des données terrain précises génèrent des études fiables et des recommandations pertinentes." }
+      ],
+      tags: ["Audit terrain","Inventaire actifs","ETAP","Export numérique","Documentation"],
+      cta: "Planifier un relevé"
+    },
+    s8: {
+      title: "Gestion des actifs électriques",
+      subtitle: "Registre · Maintenance · Conformité",
+      badge: null,
+      overview: "Registre numérique de votre infrastructure électrique, suivi de santé des équipements, planification des maintenances préventives et rapports de conformité pour maximiser fiabilité et durée de vie de vos actifs.",
+      faq: [
+        { q: "Qu'est-ce qu'un registre numérique d'actifs ?",
+          a: "Une base de données structurée de tous vos équipements incluant caractéristiques techniques, historique de maintenance, prochaines échéances et état de conformité, accessible depuis n'importe quel appareil." },
+        { q: "Comment planifiez-vous la maintenance préventive ?",
+          a: "En intégrant recommandations fabricants, exigences normatives (NFPA 70B, CSA C22.1) et historique des pannes pour générer un calendrier optimisé avec alertes automatiques." },
+        { q: "Quels rapports de conformité fournissez-vous ?",
+          a: "Rapports d'état par équipement, tableaux de bord CSA/NFPA, historique des inspections et documentation prête pour les audits et les assureurs." }
+      ],
+      tags: ["Registre numérique","NFPA 70B","ISO 55001","Maintenance préventive","Dashboard"],
+      cta: "Demander une démo"
+    },
+    s9: {
+      title: "Étude GPR — Montée de potentiel de terre",
+      subtitle: "IEEE Std 80 · CSA C22.3 · Sous-stations HT",
+      badge: null,
+      overview: "Calcul de la montée de potentiel de terre (Ground Potential Rise) lors de défauts en sous-station pour protéger le personnel, les équipements de télécommunication et les structures adjacentes, conformément à IEEE Std 80.",
+      faq: [
+        { q: "Qu'est-ce que la montée de potentiel de terre (GPR) ?",
+          a: "Lors d'un défaut phase-terre, le courant de défaut crée une différence de potentiel pouvant atteindre plusieurs milliers de volts entre le point d'injection et la terre lointaine." },
+        { q: "Quels risques le GPR crée-t-il ?",
+          a: "Tensions de contact et de pas dangereuses pour le personnel, destruction des équipements de télécommunication connectés à distance et risques pour les structures et pipelines adjacents." },
+        { q: "Que comprend l'étude NorthTech GPR ?",
+          a: "Modélisation de la grille de mise à la terre, calcul des courants de défaut, profils de tension de pas et de contact, vérification IEEE Std 80 et recommandations de mitigation." }
+      ],
+      tags: ["IEEE Std 80","CSA C22.3","Grille de terre","Tension de contact","Sous-stations"],
+      cta: "Demander une étude GPR"
+    },
+    s10: {
+      title: "Étude de surtension transitoire",
+      subtitle: "IEEE C62.41 · IEC 62271 · ATP/EMTP",
+      badge: null,
+      overview: "Simulation des surtensions de manoeuvre et de foudre pour valider la coordination des parafoudres, vérifier la tenue diélectrique des équipements et protéger votre infrastructure contre les transitoires rapides.",
+      faq: [
+        { q: "Qu'est-ce qu'une surtension transitoire ?",
+          a: "Une pointe de tension de très courte durée (microsecondes à millisecondes) pouvant dépasser plusieurs fois la tension nominale. Causée par la foudre, les manoeuvres ou les défauts phase-terre." },
+        { q: "Quels équipements sont à risque ?",
+          a: "Transformateurs (surtensions d'ouverture à vide), câbles isolés (onde de choc), variateurs de fréquence (VFD) et équipements de protection et de contrôle." },
+        { q: "Comment NorthTech protège-t-il votre installation ?",
+          a: "Par simulation ATP/EMTP ou ETAP des scénarios critiques, analyse des niveaux de surtension en chaque noeud et recommandations de coordination des parafoudres et filtres RC." }
+      ],
+      tags: ["IEEE C62.41","IEC 62271","ATP/EMTP","Parafoudres","Onde de choc"],
+      cta: "Demander une étude"
+    }
+  },
+
+  en: {
+    s1: {
+      title: "Short Circuit Study",
+      subtitle: "CSA C22.1 · IEC 60909 · IEEE Std 551",
+      badge: null,
+      overview: "Calculate maximum fault currents at every node to verify that your protective equipment (breakers, fuses, switchgear) is properly rated to interrupt them safely.",
+      faq: [
+        { q: "Why conduct a short circuit study?",
+          a: "Equipment with an interrupting capacity lower than the fault current can fail catastrophically during a fault. This study ensures every device is properly rated." },
+        { q: "When should it be updated?",
+          a: "After any significant change: adding a transformer, generator, new power source, or modifying the network topology." },
+        { q: "What deliverables are provided?",
+          a: "Complete report with fault currents at every node, equipment rating verification, and upgrade recommendations. Delivered in PDF and ETAP/SKM model files." }
+      ],
+      tags: ["CSA C22.1","IEEE Std 551","IEC 60909","ETAP","SKM PowerTools"],
+      cta: "Request a Study"
+    },
+    s2: {
+      title: "Protection Coordination",
+      subtitle: "IEEE 242 · ETAP · TCC Curves",
+      badge: null,
+      overview: "Analyze the selectivity of protective devices so that during a fault, only the device closest to the fault operates — minimizing service interruptions and protecting the network.",
+      faq: [
+        { q: "What is protection coordination?",
+          a: "It is the sequencing of protective devices (breakers, fuses, relays) so that a fault is isolated at its source without shutting down the rest of the facility." },
+        { q: "What tools and deliverables are used?",
+          a: "ETAP or SKM modelling, time-current curve (TCC) analysis, relay and breaker settings. Primary deliverable: TCC report with recommended settings." },
+        { q: "Why is this critical for industrial facilities?",
+          a: "Poor coordination leads to unplanned shutdowns, difficulty satisfying insurer requirements, and risk of fault cascades that can damage the entire network." }
+      ],
+      tags: ["IEEE 242","ETAP","SKM","TCC Curves","Relay Settings"],
+      cta: "Request a Study"
+    },
+    s3: {
+      title: "Arc Flash Study",
+      subtitle: "CSA Z462 · NFPA 70E · IEEE 1584-2018 · EasyPower",
+      badge: "Legal Requirement",
+      overview: "Calculate incident energy (cal/cm²) at every point in the network, define arc flash boundaries, determine required PPE categories, and generate regulatory warning labels compliant with CSA Z462 and NFPA 70E.",
+      faq: [
+        { q: "What is an arc flash?",
+          a: "An arc flash is a sudden explosive release of electrical energy through air between two energized conductors. Temperatures can reach 35,000°F, causing severe burns, explosions, and fatalities." },
+        { q: "Is this study legally required?",
+          a: "Yes. CSA Z462 and the Canada Labour Code require an arc flash hazard assessment for any energized electrical work. Non-compliant employers face criminal and civil liability." },
+        { q: "What does a NorthTech arc flash study include?",
+          a: "Complete network modelling in EasyPower/ETAP, incident energy calculation for each equipment item, PPE category determination, and regulatory warning labels (see below)." },
+        { q: "How often must the study be updated?",
+          a: "After any significant system change, or at minimum every 5 years. Studies predating IEEE 1584-2018 should be revised." }
+      ],
+      tags: ["CSA Z462","NFPA 70E","IEEE 1584-2018","EasyPower","ETAP","PPE Labels"],
+      cta: "Request an Arc Flash Study",
+      show_label: true
+    },
+    s4: {
+      title: "Single-Line Diagrams (SLD)",
+      subtitle: "ANSI/IEEE Std 315 · AutoCAD · SVG",
+      badge: null,
+      overview: "On-site survey and design of single-line diagrams compliant with ANSI/IEEE Std 315. Delivered in scalable SVG, PDF, and AutoCAD DWG, accurately reflecting the actual state of your installation.",
+      faq: [
+        { q: "Why update single-line diagrams?",
+          a: "Outdated or missing SLDs are a major safety risk. During emergencies, electricians and first responders rely on them to quickly understand the network architecture." },
+        { q: "What formats do you deliver?",
+          a: "Scalable SVG (lossless zoom), PDF, and AutoCAD DWG, compatible with all document management systems and ready to print at any scale." },
+        { q: "Do you conduct field surveys?",
+          a: "Yes. NorthTech performs complete field surveys: equipment nameplates, cable configurations, breaker and relay parameters, ensuring the diagram reflects reality." }
+      ],
+      tags: ["ANSI/IEEE Std 315","AutoCAD DWG","SVG","PDF","Field Survey"],
+      cta: "Request an SLD"
+    },
+    s5: {
+      title: "Load Flow Analysis",
+      subtitle: "IEEE 399 · ETAP · SKM",
+      badge: null,
+      overview: "Analyze active (kW) and reactive (kVAR) power distribution to optimize voltage profiles, reduce losses, and improve power factor across your electrical installations.",
+      faq: [
+        { q: "What does a load flow study accomplish?",
+          a: "It verifies that voltages remain within acceptable limits (±5%), identifies overloaded equipment, and optimizes load distribution to reduce losses and energy costs." },
+        { q: "When is it required?",
+          a: "When adding significant loads (motors, VFDs, data centers), integrating renewables, expanding the network, or when voltage or power factor problems are observed." },
+        { q: "What deliverables are provided?",
+          a: "Load flow report with voltage profiles, transformer and cable loading rates, power factor per node, and optimization recommendations." }
+      ],
+      tags: ["IEEE 399","ETAP","Load Flow","Voltage Profile","Power Factor"],
+      cta: "Request an Analysis"
+    },
+    s6: {
+      title: "Harmonic Analysis",
+      subtitle: "IEEE 519-2022 · IEC 61000 · IEEE 1250",
+      badge: null,
+      overview: "Evaluate current and voltage harmonic distortion (THD) from variable frequency drives, inverters, and non-linear loads, with filter recommendations compliant with IEEE 519-2022.",
+      faq: [
+        { q: "What are the consequences of harmonics?",
+          a: "Overheating of transformers and cables, nuisance breaker tripping, interference with sensitive electronics, and increased energy losses, directly impacting reliability and operating costs." },
+        { q: "How do you measure harmonics?",
+          a: "Through field measurement campaigns using power quality analyzers (Fluke 435/1760), combined with ETAP network modelling to simulate different load scenarios." },
+        { q: "What solutions can be recommended?",
+          a: "Passive harmonic filters, active power filters (APF), line reactors for VFDs, zigzag transformers, or network restructuring to isolate harmonic-generating loads." }
+      ],
+      tags: ["IEEE 519-2022","THD","VFD","Harmonic Filters","IEC 61000"],
+      cta: "Request an Analysis"
+    },
+    s7: {
+      title: "Field Data Collection",
+      subtitle: "Audit · Inventory · Digital Survey",
+      badge: null,
+      overview: "Complete on-site inventory of your electrical assets: nameplate data, configuration parameters, photographic documentation, and digital entry, providing accurate data for your electrical studies.",
+      faq: [
+        { q: "What is inventoried during the field survey?",
+          a: "Transformers (kVA, voltage ratio, connection group), circuit breakers (rating, interrupting capacity, settings), cables (size, length, type), protective relays, and all distribution equipment." },
+        { q: "Do you use digital tools?",
+          a: "Yes. NorthTech uses tablets and specialized apps for real-time field data entry, with direct export to ETAP and SKM modelling software." },
+        { q: "How does this connect to electrical studies?",
+          a: "Collected data feeds directly into simulation models. Accurate field data yields reliable studies and relevant recommendations." }
+      ],
+      tags: ["Field Audit","Asset Inventory","ETAP","Digital Export","Documentation"],
+      cta: "Schedule a Survey"
+    },
+    s8: {
+      title: "Electrical Asset Management",
+      subtitle: "Registry · Maintenance · Compliance",
+      badge: null,
+      overview: "Complete digital registry of your electrical infrastructure, equipment health tracking, preventive maintenance scheduling, and compliance reporting to maximize asset reliability and lifespan.",
+      faq: [
+        { q: "What is a digital asset registry?",
+          a: "A structured database of all your electrical equipment including technical specs, maintenance history, upcoming inspection deadlines, and regulatory compliance status, accessible from any device." },
+        { q: "How is preventive maintenance scheduled?",
+          a: "By integrating manufacturer recommendations, regulatory requirements (NFPA 70B, CSA C22.1), and failure history to generate an optimized schedule with automatic alerts." },
+        { q: "What compliance reports do you provide?",
+          a: "Equipment status reports, CSA and NFPA compliance dashboards, inspection history, and documentation ready for regulatory audits and insurers." }
+      ],
+      tags: ["Digital Registry","NFPA 70B","ISO 55001","Preventive Maintenance","Dashboard"],
+      cta: "Request a Demo"
+    },
+    s9: {
+      title: "GPR Study — Ground Potential Rise",
+      subtitle: "IEEE Std 80 · CSA C22.3 · HV Substations",
+      badge: null,
+      overview: "Calculate ground potential rise (GPR) during substation faults to protect personnel, telecommunication equipment, and adjacent metallic structures in accordance with IEEE Std 80.",
+      faq: [
+        { q: "What is ground potential rise (GPR)?",
+          a: "During a phase-to-ground fault at a substation, fault current flowing through the grounding grid creates a voltage difference that can reach several thousand volts between the injection point and remote earth." },
+        { q: "What risks does GPR create?",
+          a: "Dangerous touch and step voltages for personnel, destruction of remotely connected telecommunication equipment, and risks to adjacent structures and pipelines." },
+        { q: "What does a NorthTech GPR study include?",
+          a: "Grounding grid modelling, fault current calculations, step and touch voltage profiles, IEEE Std 80 compliance verification, and mitigation recommendations." }
+      ],
+      tags: ["IEEE Std 80","CSA C22.3","Grounding Grid","Touch Voltage","Substations"],
+      cta: "Request a GPR Study"
+    },
+    s10: {
+      title: "Transient Voltage Study",
+      subtitle: "IEEE C62.41 · IEC 62271 · ATP/EMTP",
+      badge: null,
+      overview: "Simulate switching and lightning surges to validate surge arrester coordination, verify equipment dielectric withstand, and protect your infrastructure against fast transients.",
+      faq: [
+        { q: "What is a transient overvoltage?",
+          a: "A very short-duration voltage spike (microseconds to milliseconds) that can exceed several times nominal voltage, caused by lightning, switching operations, or phase-to-ground faults." },
+        { q: "Which equipment is at risk?",
+          a: "Transformers (no-load switching surges), insulated cables (impulse waves), variable frequency drives, and protection and control equipment." },
+        { q: "How does NorthTech protect your installation?",
+          a: "Through ATP/EMTP or ETAP simulation of critical scenarios, analysis of overvoltage levels at each node, and surge arrester and RC filter coordination recommendations." }
+      ],
+      tags: ["IEEE C62.41","IEC 62271","ATP/EMTP","Surge Arresters","Impulse Wave"],
+      cta: "Request a Study"
+    }
+  }
+};
+
+function buildArcFlashLabel() {
+  return '<div class="af-label">'
+    + '<div class="af-label__header"><div class="af-label__warn-row">'
+    + '<svg class="af-label__hazard" viewBox="0 0 30 28" fill="none" aria-hidden="true"><polygon points="15,1 29,27 1,27" fill="black"/><text x="15" y="23" text-anchor="middle" fill="#F97316" font-size="17" font-weight="900" font-family="Arial,sans-serif">!</text></svg>'
+    + '<span class="af-label__warn-text">WARNING</span></div></div>'
+    + '<div class="af-label__hazard-sub">Arc Flash and Shock Hazard</div>'
+    + '<div class="af-label__body">'
+    + '<div class="af-label__col af-label__col--left">'
+    + '<div class="af-label__col-head">ARC FLASH PROTECTION</div>'
+    + '<div class="af-label__row"><span>Working Distance:</span><b>18 in</b></div>'
+    + '<div class="af-label__row"><span>Incident Energy:</span><b>4.02 cal/cm&#178;</b></div>'
+    + '<div class="af-label__row"><span>Arc Flash Boundary:</span><b>3&#39;&#8209;2&#34;</b></div>'
+    + '<div class="af-label__note">Refer to CSA Z462 for PPE requirements. Any system modifications, adjustment of protective device settings or failure to properly maintain equipment, invalidates all above values.</div>'
+    + '</div>'
+    + '<div class="af-label__col af-label__col--right">'
+    + '<div class="af-label__col-head">SHOCK PROTECTION</div>'
+    + '<div class="af-label__row"><span>Shock Hazard when<br>cover is removed:</span><b>208V</b></div>'
+    + '<div class="af-label__row"><span>Limited Approach:</span><b>1&#39;&#8209;5&#34;</b></div>'
+    + '<div class="af-label__row"><span>Restricted Approach:</span><b>1&#39;&#8209;5&#34;</b></div>'
+    + '<div class="af-label__row"><span>Glove class:</span><b>00</b></div>'
+    + '</div></div>'
+    + '<div class="af-label__footer">'
+    + '<div class="af-label__footer-left">'
+    + '<div>Equipment Name: _______________________</div>'
+    + '<div>Date: ______________</div>'
+    + '<div>Flash-Analysis by NorthTech Engineering Inc.</div>'
+    + '<div class="af-label__std">std. IEEE 1584-2018</div>'
+    + '</div>'
+    + '<div class="af-label__logo">'
+    + '<div><span class="af-label__logo-north">North</span><span class="af-label__logo-tech">Tech</span></div>'
+    + '<div class="af-label__logo-eng">Engineering</div>'
+    + '</div></div></div>';
+}
+
+function buildModalHTML(serviceKey) {
+  var data = MODALS[lang] && MODALS[lang][serviceKey];
+  if (!data) return '';
+  var html = '';
+  if (data.badge) html += '<div class="modal__badge">' + data.badge + '</div>';
+  html += '<h2 class="modal__title" id="modal-title">' + data.title + '</h2>';
+  html += '<p class="modal__subtitle">' + data.subtitle + '</p>';
+  html += '<p class="modal__overview">' + data.overview + '</p>';
+  if (data.show_label) html += buildArcFlashLabel();
+  if (data.faq && data.faq.length) {
+    html += '<div class="modal__faq">';
+    data.faq.forEach(function(item) {
+      html += '<div class="modal__faq-item"><div class="modal__faq-q">&#8212; ' + item.q + '</div><div class="modal__faq-a">' + item.a + '</div></div>';
+    });
+    html += '</div>';
+  }
+  if (data.tags && data.tags.length) {
+    html += '<div class="modal__tags">';
+    data.tags.forEach(function(tag) { html += '<span class="modal__tag">' + tag + '</span>'; });
+    html += '</div>';
+  }
+  html += '<div class="modal__cta"><a href="#contact" class="btn btn--primary" id="modal-cta-btn">' + data.cta + '</a></div>';
+  return html;
+}
+
+function openModal(serviceKey) {
+  _currentService = serviceKey;
+  var content = document.getElementById('modal-content');
+  if (content) content.innerHTML = buildModalHTML(serviceKey);
+  var overlay = document.getElementById('modal-overlay');
+  if (!overlay) return;
+  overlay.classList.add('is-open');
+  overlay.removeAttribute('aria-hidden');
+  document.body.style.overflow = 'hidden';
+  var ctaBtn = document.getElementById('modal-cta-btn');
+  if (ctaBtn) ctaBtn.addEventListener('click', closeModal);
+}
+
+function closeModal() {
+  _currentService = null;
+  var overlay = document.getElementById('modal-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('is-open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function initModals() {
+  var overlay = document.getElementById('modal-overlay');
+  var closeBtn = document.getElementById('modal-close');
+  if (!overlay) return;
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  document.querySelectorAll('[data-service]').forEach(function(card) {
+    card.addEventListener('click', function() { openModal(card.dataset.service); });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.service); }
+    });
+  });
+}
+
 /* === BOOT === */
 document.addEventListener('DOMContentLoaded', () => {
   applyLang(lang);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      applyLang(btn.dataset.lang);
+      if (_currentService) {
+        var mc = document.getElementById('modal-content');
+        if (mc) mc.innerHTML = buildModalHTML(_currentService);
+      }
+    });
   });
 
   initNav();
@@ -670,4 +1112,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   initFadeIn();
   initForm();
+  initModals();
 });
