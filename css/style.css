@@ -1689,3 +1689,110 @@ input, select, textarea { font-family: inherit; }
   .modal { padding: 28px 18px; }
   .modal__title { font-size: 21px; }
 }
+
+
+/* ============================================================
+   SERVICE CARDS v2 — PHOTO-FIRST LAYOUT (overrides base)
+   ============================================================ */
+.service-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card__photo {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.service-card__photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(7,20,45,.08) 0%,
+    rgba(7,20,45,.42) 100%);
+  pointer-events: none;
+}
+
+.service-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.22,.68,0,1.05);
+}
+
+.service-card:hover .service-card__photo img { transform: scale(1.07); }
+
+.service-card__icon { display: none; }
+
+/* Badge: flow-positioned (override absolute) */
+.service-card__badge {
+  position: relative;
+  top: auto; right: auto;
+  display: inline-block;
+  margin: 16px 22px 0;
+  padding: 3px 9px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  background: rgba(255,255,255,.18);
+  border-radius: 100px;
+  color: #fff;
+}
+
+.service-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -.25px;
+  color: #fff;
+  margin: 0;
+  padding: 18px 22px 0;
+}
+
+/* Less top gap when badge is present */
+.service-card__badge ~ .service-card__title {
+  padding-top: 10px;
+}
+
+.service-card__desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.68;
+  margin: 0;
+  padding: 9px 22px 0;
+}
+
+.service-card__norms {
+  padding: 14px 22px 22px;
+  border-top: 1px solid rgba(255,255,255,.13);
+  margin-top: 14px;
+}
+
+/* "See details" hint on hover */
+.service-card__title::after {
+  content: ' \203A';
+  color: #38D3EE;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.service-card:hover .service-card__title::after { opacity: 1; }
+
+@media (max-width: 900px) {
+  .service-card__photo { height: 180px; }
+  .service-card__title { font-size: 18px; }
+}
+@media (max-width: 600px) {
+  .service-card__photo { height: 200px; }
+  .service-card__title { font-size: 19px; padding: 16px 18px 0; }
+  .service-card__desc  { padding: 8px 18px 0; }
+  .service-card__norms { padding: 12px 18px 18px; }
+  .service-card__badge { margin: 14px 18px 0; }
+}
