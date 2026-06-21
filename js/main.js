@@ -65,8 +65,8 @@ const T = {
     about2_desc:  'Relevé terrain et études sous un même toit — aucune sous-traitance, données maîtrisées de bout en bout.',
     about3_title: 'Livraison rapide',
     about3_desc:  "Workflows IA-augmentés avec ETAP, PSCAD et EasyPower : livraison 2× plus rapide que la moyenne du secteur, sans compromis sur la qualité.",
-    about4_title: 'Trilingue FR · EN · AR',
-    about4_desc:  "Unique au Québec : service complet en français, anglais et arabe — pour les clients canadiens partout au pays.",
+    about4_title: 'Bilingue FR · EN',
+    about4_desc:  "Unique au Québec : service complet en français et en anglais — pour les clients canadiens d'un bout à l'autre du pays.",
 
     gallery_tag:   'Sur le terrain',
     gallery_title: 'Notre expertise en infrastructure électrique',
@@ -214,8 +214,8 @@ const T = {
     about2_desc:  'Field surveys and engineering studies under one roof — no subcontracting, full data control end-to-end.',
     about3_title: 'Fast Delivery',
     about3_desc:  'AI-augmented workflows with ETAP, PSCAD and EasyPower deliver results 2× faster than the industry average, without compromising quality.',
-    about4_title: 'Trilingual FR · EN · AR',
-    about4_desc:  'Unique in Quebec: full service in French, English, and Arabic — for Canadian clients across the country.',
+    about4_title: 'Bilingual FR · EN',
+    about4_desc:  'Full service in French and English — for Canadian clients from coast to coast.',
 
     gallery_tag:   'In the Field',
     gallery_title: 'Hands-On Electrical Infrastructure Expertise',
@@ -363,8 +363,8 @@ const T = {
     about2_desc:  'المسح الميداني والدراسات تحت سقف واحد — لا مقاولة من الباطن، بيانات محكومة من البداية للنهاية.',
     about3_title: 'تسليم سريع',
     about3_desc:  'سير عمل مدعومة بالذكاء الاصطناعي مع ETAP و PSCAD و EasyPower: تسليم أسرع بمرتين من متوسط الصناعة دون المساس بالجودة.',
-    about4_title: 'ثلاث لغات: FR · EN · AR',
-    about4_desc:  'خدمة كاملة بالفرنسية والإنجليزية والعربية — لعملائنا الكنديين عبر أنحاء البلاد.',
+    about4_title: 'ثنائي FR · EN',
+    about4_desc:  'خدمة كاملة بالفرنسية والإنجليزية — لعملائنا الكنديين من المحيط إلى المحيط.',
 
     gallery_tag:   'في الميدان',
     gallery_title: 'خبرة ميدانية في البنية التحتية الكهربائية',
